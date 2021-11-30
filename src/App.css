@@ -1,3 +1,156 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a,
+td,
+th,
+button {
+  font-family: Proxima Nova;
+}
+
+@media only screen and (min-width: 768px) {
+  #mainSection {
+    width: auto;
+  }
+  .loadallplayers {
+    margin-left: 86%;
+  }
+  table {
+    width: 100%;
+  }
+  #nextButton {
+    margin-left: 80%;
+  }
+  #aboutSection {
+    margin-left: none;
+  }
+}
+
+.explanatoryInfo {
+  margin-left: 30px;
+  text-align: left;
+}
+
+.vieworiginallist {
+  float: left;
+  margin-left: 30px;
+}
+
+body {
+  background: #f3f5f8;
+}
+
+table tr th {
+  border-right: 1px solid white;
+  padding: 20px 20px 20px 20px;
+}
+
+.navigationlinks {
+  text-align: initial;
+  padding-left: 30px;
+}
+
+.navigationlinks a {
+  text-decoration: none;
+  color: #000;
+}
+
+table {
+  background: #fbfdff;
+  padding: 0px 30px 0px 30px;
+}
+
+.gameLogo {
+  display: flex;
+  height: 100px;
+  margin-left: 30px;
+  margin-bottom: 20px;
+}
+
+#searchValue {
+  width: 100%;
+  padding-left: 10px;
+}
+
+.searchBar {
+  display: flex;
+  padding: 0px 30px 30px 30px;
+  height: 45px;
+}
+
+#searchBtn {
+  background: #ad1b23;
+  border-radius: 6px;
+  color: white;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.home-btn {
+  margin-left: 20px;
+}
+
+.btn-secondary {
+  border-radius: 8px;
+  border: 0.4px solid black;
+  padding: 10px 20px 10px 20px;
+  background: #fff;
+}
+
+@media only screen and (max-width: 768px) {
+  #mainSection {
+    width: fit-content;
+  }
+  .loadallplayers {
+    margin-left: 280px;
+  }
+  #nextButton {
+    margin: 25px 0 25px 190px;
+  }
+}
+
+#aboutSection {
+  margin-left: 30px;
+  text-align: left;
+}
+
+.row.pagination {
+  background: #ad1b23;
+  border-radius: 4px;
+  margin: 0px 30px 30px 30px;
+  display: flex;
+}
+
+#prevButton {
+  margin: 25px 0 25px 30px;
+  background: #ad1b23;
+  border: none;
+  color: white;
+}
+
+#nextButton {
+  color: white;
+  background: #ad1b23;
+  border: none;
+}
+
+table img {
+  height: 69px;
+}
+
+tbody tr {
+  border-bottom: 2px solid #c4c4c4;
+}
+
+table thead {
+  background: #201e20;
+  color: white;
+  border-radius: 3px;
+}
+
 .App {
   text-align: center;
 }
