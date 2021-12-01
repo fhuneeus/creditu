@@ -22,24 +22,3 @@ afterEach(() => {
   container = null;
 });
 
-
-
-// it("renders with or without a name", () => {
-//   act(() => {
-//     render(<Hoc/>, container);
-//   });
-//   expect(container.textContent).toBe("Hey, stranger");
-
-//   act(() => {
-//     render(<Hello name="Jenny" />, container);
-//   });
-//   expect(container.textContent).toBe("Hello, Jenny!");
-
-//   act(() => {
-//     render(<Hello name="Margaret" />, container);
-//   });
-//   expect(container.textContent).toBe("Hello, Margaret!");
-// });
-
-
-

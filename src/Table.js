@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import {useEffect} from 'react';
 import {useState} from 'react';
@@ -8,10 +7,9 @@ function Table(props) {
   return (
     
 
-  <><table id="dataTable">
-  
-  <thead>
-
+  <div>
+  <table id="dataTable">
+    <thead>
       <tr>
         <th>AVATAR</th>
         <th>ID</th>
@@ -19,7 +17,7 @@ function Table(props) {
         <th>BALANCE</th>
       </tr>
     </thead>
-      <tbody>
+    <tbody>
       {props.players.map((player) => (
         <tr>
           <td id="avatar"><img src={"https://"+player.avatar}/></td>
@@ -28,17 +26,10 @@ function Table(props) {
           <td id="balance">{player.balance}</td>
         </tr>
       ))}
-
-</tbody>
-
-    </table><ul>
-
-      </ul></>
-
-
-
+    </tbody>
+  </table>
+  </div>
   );
-
 }
 
 export default Table;

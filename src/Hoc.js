@@ -35,14 +35,13 @@ function Hoc() {
 
     const populateCompleteList = () => {
         fetch("https://creditu-players-assessment-api.herokuapp.com/players?pageNumber=1&documentsPerPage="+totalAmountOfPlayers)
-        .then(res => res.json())
-        .then(
-          (result) => {
-            var temp = Object.entries(result)[0];
-            setCompleteListPlayers(temp[1]);
-              }
-                ,
-          (error) => {
+          .then(res => res.json())
+          .then(
+            (result) => {
+              var temp = Object.entries(result)[0];
+              setCompleteListPlayers(temp[1]);
+            },
+            (error) => {
             setIsLoaded(true);
             setError(error);
           }
@@ -55,52 +54,42 @@ function Hoc() {
         setCurrentPage(1);
 
         fetch("https://creditu-players-assessment-api.herokuapp.com/players?pageNumber=1&documentsPerPage=20")
-      .then(res => res.json())
-      .then(
-        (result) => {
+        .then(res => res.json())
+        .then(
+          (result) => {
             console.log(result.pagination.numberOfDocuments);
             setTotalAmountOfPlayers(result.pagination.numberOfDocuments);
-          var temp = Object.entries(result)[0];
-          setListPlayers(temp[1]);
-          setOriginalListPlayers(temp[1]);
-          setIsLoaded(true);
-            },
-        (error) => {
+            var temp = Object.entries(result)[0];
+            setListPlayers(temp[1]);
+            setOriginalListPlayers(temp[1]);
+            setIsLoaded(true);
+          },
+          (error) => {
           setIsLoaded(true);
           setError(error);
         }
       )
-
-
     };
 
     const updatePlayers = (pageNumber) =>{
-    fetch("https://creditu-players-assessment-api.herokuapp.com/players?pageNumber="+pageNumber+"&documentsPerPage=20")
-    .then(res => res.json())
-    .then(
-      (result) => {
-        var temp2 = Object.entries(result)[0];
-        setListPlayers(temp2[1]);
-    }
-            ,
-      (error) => {
-      }
-    )
-
-    
+      fetch("https://creditu-players-assessment-api.herokuapp.com/players?pageNumber="+pageNumber+"&documentsPerPage=20")
+      .then(res => res.json())
+      .then(
+        (result) => {
+          var temp2 = Object.entries(result)[0];
+          setListPlayers(temp2[1]);
+      },
+        (error) => {
+        }
+      )
     }
 
     const searchFor = () => {
     let searchValue = document.getElementById("searchValue").value;
-    console.log(searchValue);
     let filteredPlayers = [];
-    console.log(completeListPlayers);
-        for(let i=0; i<completeListPlayers.length; i++){
-
-        if(completeListPlayers[i].nickname.includes(searchValue)){
-            filteredPlayers.push(completeListPlayers[i]);
-            console.log('pushed');
-            console.log(filteredPlayers);
+    for(let i=0; i<completeListPlayers.length; i++){
+      if(completeListPlayers[i].nickname.includes(searchValue)){
+          filteredPlayers.push(completeListPlayers[i]);
         }
     } 
     setListPlayers(filteredPlayers);
@@ -110,7 +99,8 @@ function Hoc() {
         if(currentPage!=(3000/20)){
             setCurrentPage(currentPage+1);
             updatePlayers(currentPage+1);
-    }}
+    }
+  }
 
     const previousPage = () => {
         if(currentPage!=1){
@@ -118,20 +108,18 @@ function Hoc() {
             updatePlayers(currentPage-1);
     }}
 
-   useEffect(() => {
-    setCurrentPage(1);
-
-        fetch("https://creditu-players-assessment-api.herokuapp.com/players?pageNumber=1&documentsPerPage=20")
+    useEffect(() => {
+      setCurrentPage(1);
+      
+      fetch("https://creditu-players-assessment-api.herokuapp.com/players?pageNumber=1&documentsPerPage=20")
       .then(res => res.json())
       .then(
         (result) => {
-            console.log(result.pagination.numberOfDocuments);
-            setTotalAmountOfPlayers(result.pagination.numberOfDocuments);
+          setTotalAmountOfPlayers(result.pagination.numberOfDocuments);
           var temp = Object.entries(result)[0];
           setListPlayers(temp[1]);
           setOriginalListPlayers(temp[1]);
-            }
-              ,
+          },
         (error) => {
           setIsLoaded(true);
           setError(error);
@@ -144,18 +132,14 @@ function Hoc() {
           (result) => {
             var temp = Object.entries(result)[0];
             setCompleteListPlayers(temp[1]);
-              }
-                ,
+              },
           (error) => {
             setIsLoaded(true);
-          setError(error);
+            setError(error);
           }
         )
 
   }, [])
-
-
-
 
 
   return (
@@ -179,20 +163,16 @@ function Hoc() {
         <Route exact path='/about' element={<About/>}>
         </Route>
       </Routes>
-  
-<Logo/>
+    <Logo/>
     <div id="mainSection">
-    {/* <button onClick={printListPlayers}>Print player list</button> */}
       <button onClick={resetAfterSearch} className="vieworiginallist btn-secondary">View original player list</button>
       <button onClick={populateCompleteList} className="loadallplayers btn-secondary">Load all players</button>
       <Search searchFor={searchFor}/>
       <Table players={listPlayers} title="People table" />
       <p>Clicking on the previous or next button will always show you the previous and next page of the original list of players</p>
       <Pagination nextPage = {nextPage} previousPage = {previousPage}/>
-    </div>
-    
+    </div>  
   </div>
-
     );
 }
 

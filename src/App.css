@@ -29,6 +29,18 @@ button {
   }
 }
 
+@media only screen and (max-width: 768px) {
+  #mainSection {
+    width: fit-content;
+  }
+  .loadallplayers {
+    margin-left: 280px;
+  }
+  #nextButton {
+    margin: 25px 0 25px 190px;
+  }
+}
+
 .explanatoryInfo {
   margin-left: 30px;
   text-align: left;
@@ -98,18 +110,6 @@ table {
   border: 0.4px solid black;
   padding: 10px 20px 10px 20px;
   background: #fff;
-}
-
-@media only screen and (max-width: 768px) {
-  #mainSection {
-    width: fit-content;
-  }
-  .loadallplayers {
-    margin-left: 280px;
-  }
-  #nextButton {
-    margin: 25px 0 25px 190px;
-  }
 }
 
 #aboutSection {

@@ -14,11 +14,9 @@ import {
 
 ReactDOM.render(
 
-<Router>
+  <Router>
     <App />
-
-    </Router>
-
+  </Router>
   ,
   document.getElementById('root')
 );
