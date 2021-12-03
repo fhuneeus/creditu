@@ -159,8 +159,8 @@ function Hoc() {
       <Logo/>
           <Link to="/about">About Us</Link>
           <Link to="/">Home</Link>
-       
       </div>
+      <hr/>
       </div>
       <h4 className="explanatoryInfo">Welcome to the First Person Shooter game.<br/>Here you can check stats of the other players<h4/>
       </h4>
