@@ -92,6 +92,7 @@ button {
     margin: 25px 0 25px 190px;
   }
   .footerText {
+    text-align: left;
     padding: 0px 30px 0px 30px;
   }
   .navigationlinks a {
