@@ -33,9 +33,11 @@ function Hoc() {
     
 
     const resetAfterSearch = () =>{
+      if(originalListPlayers.length!=null){
       setListPlayers(originalListPlayers);
       setCurrentPage(1);
       setSearchResultsNum(0);
+      }
     }
 
     const populateCompleteList = (totalAmountPlayers) => {
