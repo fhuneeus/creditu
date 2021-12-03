@@ -38,6 +38,15 @@ button {
   .gameLogo {
     height: 60px;
   }
+  #prevButton {
+    padding: 10px 25px 10px 25px;
+  }
+  #nextButton {
+    padding: 10px 25px 10px 25px;
+  }
+  .explanatoryMobile {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -56,6 +65,12 @@ button {
   }
   .gameLogo {
     height: 40px;
+  }
+  #prevButton {
+    padding: 10px 40px 10px 40px;
+  }
+  #nextButton {
+    padding: 10px 40px 10px 40px;
   }
   .btn-secondary.only-mobile {
     font-size: 16px;
@@ -80,6 +95,11 @@ button {
   .explanatoryInfo {
     font-size: 20px;
     font-weight: 400;
+    display: none;
+  }
+  .explanatoryMobile {
+    text-align: left;
+    padding-left: 30px;
   }
 }
 
@@ -214,7 +234,6 @@ table {
 
 #prevButton {
   margin: 25px 0 25px 30px;
-  padding: 10px 25px 10px 25px;
   border-radius: 32px;
   font-weight: bold;
   background: #30344d;
@@ -238,7 +257,6 @@ tbody {
   margin-right: 20px;
   margin-top: 25px;
   margin-bottom: 25px;
-  padding: 10px 25px 10px 25px;
   border-radius: 32px;
   font-weight: bold;
   background: #30344d;

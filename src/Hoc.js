@@ -154,14 +154,17 @@ function Hoc() {
   return (
 
     <div>
+      <div className="row lower-border">
       <div className="navigationlinks">
       <Logo/>
           <Link to="/about">About Us</Link>
           <Link to="/">Home</Link>
        
       </div>
+      </div>
       <h4 className="explanatoryInfo">Welcome to the First Person Shooter game.<br/>Here you can check stats of the other players<h4/>
       </h4>
+      <h4 className="explanatoryMobile">Welcome to the First Person Shooter game. Here you can check stats of the other players</h4>
       <Routes>
         <Route exact path='/about' element={<About/>}>
         </Route>
