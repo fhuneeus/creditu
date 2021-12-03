@@ -168,9 +168,11 @@ function Hoc() {
       </Routes>
 
     <div id="mainSection">
-      <Button onClick={resetAfterSearch} className="vieworiginallist btn-secondary">View all players</Button>
+      <Button onClick={resetAfterSearch} className="vieworiginallist btn-secondary only-desktop">View all players</Button>
       {/* <button onClick={populateCompleteList} className="loadallplayers btn-secondary">Load all players</button> */}
       <Search searchFor={searchFor}/>
+      <Button onClick={resetAfterSearch} className="vieworiginallist btn-secondary only-mobile">View all players</Button>
+
       <p className="searchResultsNum">Showing {searchResultsNum} search results </p>
       <Table players={listPlayers} title="People table" />
       <p className="footerText">Clicking on the previous or next button will always show you the previous and next page of the original list of players</p>

@@ -16,6 +16,9 @@ button {
   #mainSection {
     width: auto;
   }
+  .only-mobile {
+    display: none;
+  }
   .loadallplayers {
     margin-left: 86%;
   }
@@ -30,12 +33,36 @@ button {
   }
   #searchValue {
     margin-left: 60%;
+    width: 40%;
+  }
+  .gameLogo {
+    height: 60px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   #mainSection {
     width: fit-content;
+  }
+  #searchBtn {
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  .only-desktop {
+    display: none;
+  }
+  #searchValue {
+    width: 100%;
+  }
+  .gameLogo {
+    height: 40px;
+  }
+  .btn-secondary.only-mobile {
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  .only-mobile {
+    display: flex;
   }
   .loadallplayers {
     margin-left: 280px;
@@ -48,9 +75,11 @@ button {
   }
   .navigationlinks a {
     font-size: 30px;
+    margin-left: 40px;
   }
   .explanatoryInfo {
     font-size: 20px;
+    font-weight: 400;
   }
 }
 
@@ -109,11 +138,9 @@ table {
 
 .gameLogo {
   display: flex;
-  height: 60px;
 }
 
 #searchValue {
-  width: 40%;
   padding-left: 10px;
   background-color: #f3f3f4;
   border: none;
