@@ -12,11 +12,11 @@ code {
     monospace;
 }
 
-@font-face {
+/* @font-face {
   font-family: "Proxima Nova";
   src: local("Proxima Nova"),
     url(.fonts/ProximaNova-Regular.woff) format ("woff");
   font-family: "Proxima Nova";
   src: local("Proxima Nova"), url(.fonts/ProximaNova-Black.woff) format ("woff");
   src: local("Proxima Nova"), url(.fonts/ProximaNova-Bold.woff) format ("woff");
-}
+} */
