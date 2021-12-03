@@ -1,6 +1,7 @@
 import './App.css';
 import {useEffect} from 'react';
 import {useState} from 'react';
+import BoostrapTable from 'react-bootstrap/Table';
 
 function Table(props) {
 
@@ -8,7 +9,7 @@ function Table(props) {
     
 
   <div>
-  <table id="dataTable">
+  <table id="dataTable" className="table-striped table-dark">
     <thead>
       <tr>
         <th>AVATAR</th>

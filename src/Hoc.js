@@ -7,6 +7,9 @@ import Search from './Search';
 import { useEffect } from 'react';
 import Pagination from './Pagination';
 import About from './About';
+import Button from 'react-bootstrap/Button';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import * as ReactBootstrap from 'react-bootstrap';
 import { unmountComponentAtNode } from "react-dom";
 import {
   BrowserRouter as Router,
@@ -26,15 +29,17 @@ function Hoc() {
     const [totalAmountOfPlayers, setTotalAmountOfPlayers] = useState(0);
     const [isLoaded, setIsLoaded] = useState(false);
     const [error, setError] = useState(null);
+    const [searchResultsNum, setSearchResultsNum] = useState(0);
     
 
     const resetAfterSearch = () =>{
       setListPlayers(originalListPlayers);
       setCurrentPage(1);
+      setSearchResultsNum(0);
     }
 
-    const populateCompleteList = () => {
-        fetch("https://creditu-players-assessment-api.herokuapp.com/players?pageNumber=1&documentsPerPage="+totalAmountOfPlayers)
+    const populateCompleteList = (totalAmountPlayers) => {
+        fetch("https://creditu-players-assessment-api.herokuapp.com/players?pageNumber=1&documentsPerPage="+totalAmountPlayers)
           .then(res => res.json())
           .then(
             (result) => {
@@ -46,7 +51,6 @@ function Hoc() {
             setError(error);
           }
         )
-        document.getElementById("loadAllPlayersText").innerHTML = "You are good to go. All players are loaded";
     }
     
     const populateData = () => {
@@ -86,14 +90,17 @@ function Hoc() {
 
     const searchFor = () => {
     let searchValue = document.getElementById("searchValue").value;
+    if(searchValue!=''){
     let filteredPlayers = [];
     for(let i=0; i<completeListPlayers.length; i++){
       if(completeListPlayers[i].nickname.includes(searchValue)){
           filteredPlayers.push(completeListPlayers[i]);
         }
-    } 
+    }
+    setSearchResultsNum(filteredPlayers.length); 
     setListPlayers(filteredPlayers);
     }
+  }
 
     const nextPage = () => {
         if(currentPage!=(3000/20)){
@@ -115,10 +122,10 @@ function Hoc() {
       .then(res => res.json())
       .then(
         (result) => {
-          setTotalAmountOfPlayers(result.pagination.numberOfDocuments);
           var temp = Object.entries(result)[0];
           setListPlayers(temp[1]);
           setOriginalListPlayers(temp[1]);
+          populateCompleteList(result.pagination.numberOfDocuments);
           },
         (error) => {
           setIsLoaded(true);
@@ -126,18 +133,18 @@ function Hoc() {
         }
       )
 
-      fetch("https://creditu-players-assessment-api.herokuapp.com/players?pageNumber=1&documentsPerPage="+totalAmountOfPlayers)
-        .then(res => res.json())
-        .then(
-          (result) => {
-            var temp = Object.entries(result)[0];
-            setCompleteListPlayers(temp[1]);
-              },
-          (error) => {
-            setIsLoaded(true);
-            setError(error);
-          }
-        )
+      // fetch("https://creditu-players-assessment-api.herokuapp.com/players?pageNumber=1&documentsPerPage="+totalAmountOfPlayers)
+      //   .then(res => res.json())
+      //   .then(
+      //     (result) => {
+      //       var temp = Object.entries(result)[0];
+      //       setCompleteListPlayers(temp[1]);
+      //         },
+      //     (error) => {
+      //       setIsLoaded(true);
+      //       setError(error);
+      //     }
+      //   )
 
   }, [])
 
@@ -145,32 +152,27 @@ function Hoc() {
   return (
 
     <div>
-      <ul className="navigationlinks">
-        <button id="aboutUs" className="btn-secondary">
+      <div className="navigationlinks">
+      <Logo/>
           <Link to="/about">About Us</Link>
-        </button>
-        <button id="Home" className="btn-secondary home-btn">
           <Link to="/">Home</Link>
-        </button>
-      </ul>
-      <h4 className="explanatoryInfo">Welcome to the First Person Shooter game. Here you can check stats of the other players<h4/>
+       
+      </div>
+      <h4 className="explanatoryInfo">Welcome to the First Person Shooter game.<br/>Here you can check stats of the other players<h4/>
       </h4>
-      <h4 id ="loadAllPlayersText" className="explanatoryInfo">Before doing anything, click on the "Load all players" button to have the list of all players.
-        Do this before searching.
-      </h4>
- 
       <Routes>
         <Route exact path='/about' element={<About/>}>
         </Route>
       </Routes>
-    <Logo/>
+
     <div id="mainSection">
-      <button onClick={resetAfterSearch} className="vieworiginallist btn-secondary">View original player list</button>
-      <button onClick={populateCompleteList} className="loadallplayers btn-secondary">Load all players</button>
+      <Button onClick={resetAfterSearch} className="vieworiginallist btn-secondary">View all players</Button>
+      {/* <button onClick={populateCompleteList} className="loadallplayers btn-secondary">Load all players</button> */}
       <Search searchFor={searchFor}/>
+      <p className="searchResultsNum">Showing {searchResultsNum} search results </p>
       <Table players={listPlayers} title="People table" />
-      <p>Clicking on the previous or next button will always show you the previous and next page of the original list of players</p>
-      <Pagination nextPage = {nextPage} previousPage = {previousPage}/>
+      <p className="footerText">Clicking on the previous or next button will always show you the previous and next page of the original list of players</p>
+      <Pagination nextPage = {nextPage} previousPage = {previousPage} pgnumber={currentPage}/>
     </div>  
   </div>
     );
