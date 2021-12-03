@@ -126,6 +126,7 @@ button {
   float: left;
   margin-left: 30px;
   cursor: pointer;
+  text-transform: uppercase;
 }
 
 body {
@@ -207,6 +208,7 @@ table {
 }
 
 #searchBtn {
+  text-transform: uppercase;
   background-color: #246eb9;
   border: none;
   border-radius: 6px;
