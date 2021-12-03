@@ -1,5 +1,17 @@
 ## Available Scripts
 
+## Usage
+
+The list of players will load automatically, and then you can search for a keyword and display the players that match that keyword in their nickname.
+To go back and show all of the original players, click on the "View all players" button.
+
+And also you can use the pagination by going to the bottom of the app and clicking on Next or Previous, switching pages right and left.
+
+To run the unit tests, type in npm test and hit enter. This will test Pagination, Search and Table components.
+
+For the end to end tests, download Cypress and go in the src/cypress/home_page_spec.js
+There you will find the end to end tests.
+
 In the project directory, you can run:
 
 ### `npm start`

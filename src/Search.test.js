@@ -1,7 +1,4 @@
-import logo from './logo.svg';
 import './App.css';
-import {useEffect} from 'react';
-import {useState} from 'react';
 import React from "react";
 import { render, unmountComponentAtNode } from "react-dom";
 import { act } from "react-dom/test-utils";
