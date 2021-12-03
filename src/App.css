@@ -16,6 +16,9 @@ button {
   #mainSection {
     width: auto;
   }
+  .visualPageNumber {
+    font-size: 16px;
+  }
   .only-mobile {
     display: none;
   }
@@ -74,9 +77,11 @@ button {
   }
   #prevButton {
     padding: 10px 40px 10px 40px;
+    font-size: 16px;
   }
   #nextButton {
     padding: 10px 40px 10px 40px;
+    font-size: 16px;
   }
   .btn-secondary.only-mobile {
     font-size: 16px;
@@ -92,11 +97,12 @@ button {
     margin: 25px 0 25px 190px;
   }
   .footerText {
+    font-size: 16px;
     text-align: left;
     padding: 0px 30px 0px 30px;
   }
   .navigationlinks a {
-    font-size: 30px;
+    font-size: 20px;
     margin-left: 40px;
   }
   .explanatoryInfo {
@@ -106,6 +112,7 @@ button {
   }
   .explanatoryMobile {
     text-align: left;
+    font-size: 16px;
     padding-left: 30px;
   }
 }

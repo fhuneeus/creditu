@@ -157,7 +157,7 @@ function Hoc() {
       <div className="row lower-border">
       <div className="navigationlinks">
       <Logo/>
-          <Link to="/about">About Us</Link>
+          <Link to="/about">About us</Link>
           <Link to="/">Home</Link>
       </div>
       <hr/>
