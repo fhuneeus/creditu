@@ -12,7 +12,7 @@ To run the unit tests, type in npm test and hit enter. This will test Pagination
 For the end to end tests, download Cypress and go in the src/cypress/home_page_spec.js
 There you will find the end to end tests.
 
-In the project directory, you can run:
+Finally, here.
 
 ### `npm start`
 
