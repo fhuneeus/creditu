@@ -135,19 +135,6 @@ function Hoc() {
         }
       )
 
-      // fetch("https://creditu-players-assessment-api.herokuapp.com/players?pageNumber=1&documentsPerPage="+totalAmountOfPlayers)
-      //   .then(res => res.json())
-      //   .then(
-      //     (result) => {
-      //       var temp = Object.entries(result)[0];
-      //       setCompleteListPlayers(temp[1]);
-      //         },
-      //     (error) => {
-      //       setIsLoaded(true);
-      //       setError(error);
-      //     }
-      //   )
-
   }, [])
 
 
@@ -157,12 +144,12 @@ function Hoc() {
       <div className="row lower-border">
       <div className="navigationlinks">
       <Logo/>
-          <Link to="/about">About us</Link>
-          <Link to="/">Home</Link>
+          <Link to="/about" id="aboutUs">About us</Link>
+          <Link to="/" id="Home">Home</Link>
       </div>
       <hr/>
       </div>
-      <h4 className="explanatoryInfo">Welcome to the First Person Shooter game.<br/>Here you can check stats of the other players and search by nickname.<h4/>
+      <h4 className="explanatoryInfo">Welcome to the First Person Shooter - "Goldeneye" game.<br/>Here you can check stats of the other players and search by nickname.<h4/>
       </h4>
       <h4 className="explanatoryMobile">Welcome to the First Person Shooter game. Here you can check stats of the other players and search by nickname.</h4>
       <Routes>
@@ -172,7 +159,6 @@ function Hoc() {
 
     <div id="mainSection">
       <Button onClick={resetAfterSearch} className="vieworiginallist btn-secondary only-desktop">View all players</Button>
-      {/* <button onClick={populateCompleteList} className="loadallplayers btn-secondary">Load all players</button> */}
       <Search searchFor={searchFor}/>
       <Button onClick={resetAfterSearch} className="vieworiginallist btn-secondary only-mobile">View all players</Button>
 

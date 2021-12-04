@@ -18,10 +18,6 @@ describe('The Home Page', () => {
       cy.get('#prevButton').click().get('#dataTable').should('contain','21').should('contain','40');
       cy.get('#prevButton').click().get('#dataTable').should('contain','1').should('contain','20');
 
-      //Loading all players and testing the search for two different keywords
-      cy.get('.loadallplayers').click();
-      cy.wait(4000);
-
       //Testing sjlzxeo keyword and finding exact coincidence
       cy.get('#searchValue').type('sjlzxeo');
       cy.get('#searchBtn').click();

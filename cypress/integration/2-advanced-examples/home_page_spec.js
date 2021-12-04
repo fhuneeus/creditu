@@ -1,6 +1,6 @@
 describe('The Home Page', () => {
     it('successfully loads', () => {
-      cy.visit('http://localhost:3000'),
+      cy.visit('/'),
 
       //Testing if the About us and Home buttons work properly
       //When clicking on About us route should redirect to /about, and clicking on home should 

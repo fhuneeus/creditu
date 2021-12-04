@@ -69,6 +69,11 @@ button {
   .only-desktop {
     display: none;
   }
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
   #searchValue {
     width: 100%;
   }

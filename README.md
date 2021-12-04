@@ -5,14 +5,30 @@
 The list of players will load automatically, and then you can search for a keyword and display the players that match that keyword in their nickname.
 To go back and show all of the original players, click on the "View all players" button.
 
-And also you can use the pagination by going to the bottom of the app and clicking on Next or Previous, switching pages right and left.
+You can also use the pagination by going to the bottom of the app and clicking on Next or Previous, switching pages right and left.
 
 To run the unit tests, type in npm test and hit enter. This will test Pagination, Search and Table components.
 
-For the end to end tests, download Cypress and go in the src/cypress/home_page_spec.js
-There you will find the end to end tests.
+For the end to end tests, download Cypress.
+Once you are in the projects folder, go once into cypress folder via cd cypress command.
+Then type in npx cypress open to execute end to end tests.
 
-Finally, here.
+In order to continue developing over the existing solution, you can clone the repo and work on the files.
+Hoc.js is the high order component, where the components are contained (Search, Pagination, Table, Logo).
+So in the src folder of this project you can create new components and include them in the Hoc.js file.
+
+CSS changes, everything is in the App.css file. There you can edit the CSS for the different components and
+elements.
+
+When downloading the repo from scratch, run
+npm run build -
+and then
+npm run start
+
+The app will start locally in localhost:3000.
+There you can make changes and work on the app, before deploying it on netlify, heroku or another medium.
+
+Some of the commands that you will be able to use in your computer are the following:
 
 ### `npm start`
 
