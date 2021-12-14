@@ -12,7 +12,10 @@ To go back and show all of the original players, click on the "View all players"
 
 You can also use the pagination by going to the bottom of the app and clicking on Next or Previous, switching pages right and left.
 
-To run the unit tests, type in npm test and hit enter. This will test Pagination, Search and Table components.
+To run the unit tests, go into the src folder and type in 
+npm test -- Search.test.js
+npm test -- Pagination.test.js
+npm test -- Table.test.js
 
 For the end to end tests, download Cypress by running the following command in the root folder.
 "npm install cypress --save-dev"
