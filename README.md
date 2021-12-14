@@ -5,7 +5,7 @@
 This is the Goldeneye game app.
 
 You can load it by going to the https://pedantic-fermi-2c8c7f.netlify.app/ URL or by cloning the repo and running it in localhost:3000.
-To run it on localhost go on a Terminal and type in "npm run start" in the root folder, and click Enter.
+To run it on localhost go on a Terminal and type in "npm run build" and then "npm run start" in the root folder, and click Enter.
 
 Once you are in the app, you will see a table with attributes of players. The list of players will load automatically, you have to wait for a couple of seconds. After this you can search for a keyword and display the players that match that keyword in their nickname.
 To go back and show all of the original players, click on the "View all players" button.
