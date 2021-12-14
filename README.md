@@ -2,23 +2,36 @@
 
 ## Usage
 
-The list of players will load automatically, and then you can search for a keyword and display the players that match that keyword in their nickname.
+This is the Goldeneye game app.
+
+You can load it by going to the https://pedantic-fermi-2c8c7f.netlify.app/ URL or by cloning the repo and running it in localhost:3000.
+To run it on localhost go on a Terminal and type in "npm run start" in the root folder, and click Enter.
+
+Once you are in the app, you will see a table with attributes of players. The list of players will load automatically, you have to wait for a couple of seconds. After this you can search for a keyword and display the players that match that keyword in their nickname.
 To go back and show all of the original players, click on the "View all players" button.
 
 You can also use the pagination by going to the bottom of the app and clicking on Next or Previous, switching pages right and left.
 
 To run the unit tests, type in npm test and hit enter. This will test Pagination, Search and Table components.
 
-For the end to end tests, download Cypress.
-Once you are in the projects folder, go once into cypress folder via cd cypress command.
-Then type in npx cypress open to execute end to end tests.
+For the end to end tests, download Cypress by running the following command in the root folder.
+"npm install cypress --save-dev"
+
+Also you will have to start a localhost version of the app typing in the root folder "npm run start", and leave it running in localhost:3000
+
+In the root folder, go into the src folder.
+Then type in "npx cypress open"
+
+This will open a window where you have to click on home_page_spec.js in order to run the end to end tests.
+
+---------
 
 In order to continue developing over the existing solution, you can clone the repo and work on the files.
 Hoc.js is the high order component, where the components are contained (Search, Pagination, Table, Logo).
 So in the src folder of this project you can create new components and include them in the Hoc.js file.
 
-CSS changes, everything is in the App.css file. There you can edit the CSS for the different components and
-elements.
+In regards to CSS changes, everything is in the App.css file. 
+There you can edit the CSS for the different components and elements.
 
 When downloading the repo from scratch, run
 npm run build -
