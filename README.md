@@ -36,10 +36,10 @@ So in the src folder of this project you can create new components and include t
 In regards to CSS changes, everything is in the App.css file. 
 There you can edit the CSS for the different components and elements.
 
-When downloading the repo from scratch, run
-npm run build -
+When downloading the repo from scratch, execute
+"npm run build" -
 and then
-npm run start
+"npm run start"
 
 The app will start locally in localhost:3000.
 There you can make changes and work on the app, before deploying it on netlify, heroku or another medium.
